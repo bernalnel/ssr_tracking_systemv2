@@ -1,0 +1,26 @@
+database : name in html
+
+dxc_ssr = "Process, incrementing by 1"
+date = "date.now"
+usyd_no = ritm
+ssr_owner = request_owner
+sre_name = coordinate
+exec_date = exec_window
+status = "for change creation/change created/nochangerequired"
+change_no = "Process, SNOW"
+change_created = "Process, SNOW"
+prior = prior
+usyd_cat = request_category
+dxc_cat = request_category
+dxc_contact = "Process, email of category"
+priority = priority
+dateof_exec = "Process"
+dateof_completion = "Process"
+age = "Process, date - dateof_completion"
+remarks = "Process, ChangeCompleted/Cancelled"
+description = subject
+applicable = applicable
+action_after = action
+start_time = start_time
+end_time = end_time
+perform = description

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Request</title>
+    <link rel="stylesheet" href="css/content.css">
+</head>
+
+<body>
+    <div class="full-height">
+        <div class="p1-colorstrip">
+        </div>
+        <div class="p2">
+            <div class="logodiv">
+                <img class="logo1" src="images/logo1.png" alt="Usyd logo">
+            </div>
+            <div class="titlediv">
+                <h1 class="title">NEW REQUEST</h1>
+            </div>
+        </div>
+        <div class="p3-content">
+            <div class="form">
+                <form method="POST" action="./php/newrequest.php" enctype="multipart/form-data" autocomplete="off">
+                    <h2>SSR Request Details</h2>
+                    <label for="subject">Import a file:</label>
+                    <input class="center-block" type="file" name="myfile[]" multiple="multiple"><br>
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject"><br>
+
+                    <label for="usyd_no">Usyd Service request reference:</label>
+                    <input type="text" id="usyd_no" name="usyd_no" value="usyd_no" required><br>
+
+                    <label for="priority">Usyd Priority:</label>
+                    <select id="priority" name="priority">
+                        <option value="p1">P1 - Critical</option>
+                        <option value="p2">P2 - High</option>
+                        <option value="p3">P3 - Moderate</option>
+                        <option selected="p4" value="p4">P4 - Low</option>
+                    </select><br><br>
+
+
+                    <b><label for="sequencing">Usyd Sequencing:</label></b><br>
+
+                    <label for="applicable">Applicable (yes/no):</label>
+                    <select id="applicable" name="applicable">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select><br>
+
+                    <label for="sre_name">Usyd Person responsible to coordinate:</label>
+                    <input type="text" id="sre_name" name="sre_name" required><br>
+
+                    <label for="prior">Actions to be done prior to this SSR:</label>
+                    <input type="text" id="prior" name="prior"><br>
+
+                    <label for="action">Actions to be done after this SSR:</label>
+                    <input type="text" id="action" name="action"><br><br>
+
+                    <label for="ssr_owner">Service Request Owner:</label>
+                    <input type="text" id="ssr_owner" name="ssr_owner" required><br><br>
+
+                    <b><label for="exe">Execution Window:</label></b><br>
+
+                    <label for="exec_date">Date:</label>
+                    <input type="date" id="exec_date" name="exec_date" required><br>
+
+                    <label for="start_time">Start time (24hr Time):</label>
+                    <input type="time" id="start_time" name="start_time" required><br>
+
+                    <label for="end_time">End time (24hr Time):</label>
+                    <input type="time" id="end_time" name="end_time" required><br>
+
+                    <label for="usyd_cat">Service Request Category: (Select the applicable category)</label>
+                    <select id="usyd_cat" name="usyd_cat">
+                        <option value="asa">ASA Firewall</option>
+                        <option value="backup">Backup</option>
+                        <option value="oracle">Database Oracle</option>
+                        <option value="sql">Database SQL</option>
+                        <option value="f5">F5</option>
+                        <option value="msv">MSV CloudOps</option>
+                        <option value="nsx">NSX Firewall</option>
+                        <option value="aws">Public Aws CloudOps</option>
+                        <option value="azure">Public Azure CloudOps</option>
+                        <option value="storage">Storage Team</option>
+                        <option value="unix">Unix/Linux</option>
+                        <option value="vmware">VMWare</option>
+                        <option value="wintel">Wintel</option>
+                    </select><br><br>
+
+
+                    <b><label for="perform">Please perform the following steps on</label></b><br>
+
+                    <b><label for="description">Description:</label></b><br>
+                    <textarea id="description" name="description" rows="30" cols="100"></textarea required><br><br>
+                    
+                    <button type="submit" id="create_request">Create Request</button><br>
+                </form>
+                <button type="button" id="back" onclick="goBack()">Back</button>
+            </div>
+        </div>
+        <br>
+    </div>
+</body>
+
+<script>
+    function goBack() {
+        history.back();
+    }
+</script>
+
+</html>

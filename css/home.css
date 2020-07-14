@@ -1,0 +1,54 @@
+html, body {
+  height: 100%;
+  margin: auto;
+}
+.full-height {
+  height: 100%;
+}
+.p1-colorstrip{
+  height:5% ;
+  width: 100%;
+  background-color: #333333;
+}
+.p2{
+  height:25% ;
+  box-sizing: border-box;
+}
+.logodiv{
+  box-sizing: border-box;
+  float:left;
+  text-align: center;
+  width: 30%;
+  height: 100%;
+}
+.logo1{
+  margin-left: 100px;
+  height: 100%;
+}
+.navbar{
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  float: left;
+  width: 70%;
+  height: 100%;
+}
+.menu a{
+  padding: 15px;
+  color: #333333;
+  font-weight: bold;
+  font-size: 20px;
+  text-decoration: none;
+}
+.item:hover{
+  background-color: #999;
+}
+.p3-image{
+  height:70%
+}
+.usyd{
+  height:100%;
+  width: 100%;
+}

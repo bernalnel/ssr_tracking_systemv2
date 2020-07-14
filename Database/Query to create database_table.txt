@@ -1,0 +1,71 @@
+#Create DATABASE
+CREATE DATABASE ssr_database;
+
+#Create TABLE - ssr_tracker 
+CREATE TABLE ssr_database.ssr_tracker (
+    dxc_ssr int(5) ZEROFILL NOT NULL AUTO_INCREMENT,
+    date datetime,
+    usyd_no varchar(255),
+    ssr_owner varchar(255),
+    sre_name varchar(255),
+    exec_date varchar(255),
+    status varchar(255),
+    change_no varchar(255),
+    change_created varchar(255),
+    prior varchar(255),
+    usyd_cat varchar(255),
+    dxc_cat varchar(255),
+    dxc_contact varchar(255),
+    priority varchar(255),
+    dateof_exec varchar(255),
+    dateof_completion varchar(255),
+    age varchar(255),
+    remarks varchar(255),
+    description varchar(255),
+    applicable varchar(255),
+    action_after varchar(255),
+    start_time varchar(255),
+    end_time varchar(255),
+    perform longtext,
+    PRIMARY KEY(dxc_ssr)
+    );
+
+#Changing the starting value for the AUTO_INCREMENT of dxc_ssr
+#ALTER TABLE ssr_database.ssr_tracker AUTO_INCREMENT = 50;
+
+#Create TABLE - ssr_accounts 
+CREATE TABLE ssr_database.ssr_accounts (
+    employee_id varchar(255),
+    password varchar(255),
+    type varchar(255),
+    PRIMARY KEY(employee_id)
+    );
+
+#Create TABLE - ssr_files 
+CREATE TABLE ssr_database.ssr_files (
+    dxc_ssr varchar(30),
+    name varchar(255),
+    size int(11),
+    downloads int(11)
+    );
+
+#Create TABLE - ssr_snow 
+CREATE TABLE ssr_database.ssr_snow (
+    sys_id varchar(255),
+    number varchar(30),
+    state varchar(30),
+    PRIMARY KEY (dxc_ssr)
+    );
+
+
+#Insert sample data ssr_accounts
+INSERT INTO ssr_database.ssr_accounts VALUES (
+    "admin",
+    "admin",
+    "admin"
+    );
+INSERT INTO ssr_database.ssr_accounts VALUES (
+    "user",
+    "user",
+    "user"
+    );
