@@ -51,7 +51,7 @@ CREATE TABLE ssr_database.ssr_files (
 
 #Create TABLE - ssr_snow 
 CREATE TABLE ssr_database.ssr_snow (
-    dxc_ssr varchar(255),
+    dxc_ssr varchar(255),           
     sys_id varchar(255),
     number varchar(30),
     state varchar(30),
