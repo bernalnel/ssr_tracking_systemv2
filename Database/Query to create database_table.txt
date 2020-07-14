@@ -57,6 +57,24 @@ CREATE TABLE ssr_database.ssr_snow (
     PRIMARY KEY (dxc_ssr)
     );
 
+#Create Table - ssr_ritm
+CREATE TABLE ssr_database.ssr_ritm (
+ritm_no int(5) ZEROFILL NOT NULL AUTO_INCREMENT,
+subject varchar(255),
+priority varchar(255),
+applicable varchar(255),
+sre_name varchar(255),
+prior varchar(255),
+action_after varchar(255),
+ssr_owner varchar(255),
+exec_date varchar(255),
+start_time varchar(255),
+end_time varchar(255),
+usyd_cat varchar(255),
+usyd_change varchar(255),
+PRIMARY KEY(ritm_no)
+);
+
 
 #Insert sample data ssr_accounts
 INSERT INTO ssr_database.ssr_accounts VALUES (
