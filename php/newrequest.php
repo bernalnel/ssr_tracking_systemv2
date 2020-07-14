@@ -4,11 +4,11 @@
 
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         if($_POST["subject"]){
-            $description = $_POST["subject"];
+            $subject = $_POST["subject"];
         }
-        if($_POST["usyd_no"]){
-            $usyd_no = $_POST["usyd_no"];
-        }
+        // if($_POST["usyd_no"]){
+        //     $usyd_no = $_POST["usyd_no"];
+        // }
         if($_POST["priority"]){
             $priority = $_POST["priority"];
         }
@@ -94,52 +94,72 @@
         }
         
         
-            if($query = mysqli_query($connections, "INSERT INTO ssr_tracker(description, usyd_no, priority, applicable, sre_name, prior, action_after, ssr_owner, exec_date, start_time, end_time, usyd_cat, dxc_cat, perform, date, status, dxc_contact) 
-            VALUES ('$description','$usyd_no','$priority','$applicable','$sre_name','$prior','$action_after','$ssr_owner','$exec_date','$start_time','$end_time','$usyd_cat','$dxc_cat','$perform', '$date', '$status', '$dxc_contact')")){
+        if($query = mysqli_query($connections, "INSERT INTO ssr_ritm(ritm_no, subject, priority, applicable, sre_name, prior, action_after, ssr_owner, exec_date, start_time, end_time, usyd_cat, usyd_change) 
+            VALUES ('','$subject','$priority','$applicable','$sre_name','$prior','$action_after','$ssr_owner','$exec_date','$start_time','$end_time','$usyd_cat','')")){
 
 
+            $retrieve_query = mysqli_query($connections, "SELECT * FROM ssr_ritm ORDER BY ritm_no DESC LIMIT 1");
+            while($roww = mysqli_fetch_assoc($retrieve_query)){
+                $db_ritm = $roww["ritm_no"];
+                $db_ritm_no = "RITM$db_ritm";
+                $db_subject = $roww["subject"];
+                $db_priority = $roww["priority"];
+                $db_applicable = $roww["applicable"];
+                $db_sre_name = $roww["sre_name"];
+                $db_prior = $roww["prior"];
+                $db_action_after = $roww["action_after"];
+                $db_ssr_owner = $roww["ssr_owner"];
+                $db_exec_date = $roww["exec_date"];
+                $db_start_time = $roww["start_time"];
+                $db_end_time = $roww["end_time"];
+                $db_usyd_cat = $roww["usyd_cat"];
+                $db_usyd_change = $roww["usyd_change"];
 
-                        //IMPORTANT CHANGE THE FOLDER OF USYD_NO TO DXCSSR
-            // Uploads files
-        if (!$_POST['myfile']) {
-
-            // Create Folder
-            $query = mysqli_query($connections, "SELECT * FROM ssr_tracker ORDER BY dxc_ssr DESC LIMIT 1;");
-            $row = mysqli_fetch_assoc($query);
-
-            $dxc_ssr = $row['dxc_ssr'];
-
-            if (!file_exists('../uploads/' . $row['dxc_ssr'])) {
-                mkdir('../uploads/' . $row['dxc_ssr'], 0777, true);
+                $query2 = mysqli_query($connections, "INSERT INTO ssr_tracker(usyd_no, description, priority, applicable, sre_name, prior, action_after, ssr_owner, exec_date, start_time, end_time, usyd_cat, change_no)
+                        VALUES ('$db_ritm_no','$db_subject','$db_priority','$db_applicable','$db_sre_name','$db_prior','$db_action_after','$db_ssr_owner','$db_exec_date','$db_start_time','$db_end_time','$db_usyd_cat','$db_usyd_change')");
             }
-           
-            $i = 0;
-            foreach ($_FILES['myfile']['name'] as $filename){
-                $destination = '../uploads/' . $row['dxc_ssr'] . '/' . $filename;
-                $extension = pathinfo($filename, PATHINFO_EXTENSION);
-                //temp
-                $file = $_FILES['myfile']['tmp_name'][$i];
-                $size = $_FILES['myfile']['size'][$i];
-                //size
-                if ($_FILES['myfile']['size'][$i] > 10000000) {
-                    echo "File too large!";
-                } 
-                else {
-                //temp to dest
-                    if (move_uploaded_file($file, $destination)) {
-                        $sql = "INSERT INTO ssr_files (dxc_ssr, name, size, downloads) VALUES ('".$row['dxc_ssr']."','$filename', $size, 0)";
-                        if (mysqli_query($connections, $sql)) {
-                        }
+
+                            //IMPORTANT CHANGE THE FOLDER OF USYD_NO TO DXCSSR
+                // Uploads files
+            if (!$_POST['myfile']) {
+
+                // Create Folder
+                $query = mysqli_query($connections, "SELECT * FROM ssr_tracker ORDER BY dxc_ssr DESC LIMIT 1;");
+                $row = mysqli_fetch_assoc($query);
+
+                $dxc_ssr = $row['dxc_ssr'];
+
+                if (!file_exists('../uploads/' . $row['dxc_ssr'])) {
+                    mkdir('../uploads/' . $row['dxc_ssr'], 0777, true);
+                }
+            
+                $i = 0;
+                foreach ($_FILES['myfile']['name'] as $filename){
+                    $destination = '../uploads/' . $row['dxc_ssr'] . '/' . $filename;
+                    $extension = pathinfo($filename, PATHINFO_EXTENSION);
+                    //temp
+                    $file = $_FILES['myfile']['tmp_name'][$i];
+                    $size = $_FILES['myfile']['size'][$i];
+                    //size
+                    if ($_FILES['myfile']['size'][$i] > 10000000) {
+                        echo "File too large!";
                     } 
                     else {
-                        echo "Failed to upload file.";
+                    //temp to dest
+                        if (move_uploaded_file($file, $destination)) {
+                            $sql = "INSERT INTO ssr_files (dxc_ssr, name, size, downloads) VALUES ('".$row['dxc_ssr']."','$filename', $size, 0)";
+                            if (mysqli_query($connections, $sql)) {
+                            }
+                        } 
+                        else {
+                            echo "Failed to upload file.";
+                        }
                     }
+                    $i++;
                 }
-                $i++;
             }
-        }
                  
-    }
+        }
                
        //SNOW CREATION
                 
