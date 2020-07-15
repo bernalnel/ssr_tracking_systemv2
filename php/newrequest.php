@@ -1,5 +1,6 @@
 <?php
     include ("./connections.php");
+    include ("./usydpost.js");
     session_start();
 
     if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -101,22 +102,9 @@
             $retrieve_query = mysqli_query($connections, "SELECT * FROM ssr_ritm ORDER BY ritm_no DESC LIMIT 1");
             while($roww = mysqli_fetch_assoc($retrieve_query)){
                 $db_ritm = $roww["ritm_no"];
-                $db_ritm_no = "RITM$db_ritm";
-                $db_subject = $roww["subject"];
-                $db_priority = $roww["priority"];
-                $db_applicable = $roww["applicable"];
-                $db_sre_name = $roww["sre_name"];
-                $db_prior = $roww["prior"];
-                $db_action_after = $roww["action_after"];
-                $db_ssr_owner = $roww["ssr_owner"];
-                $db_exec_date = $roww["exec_date"];
-                $db_start_time = $roww["start_time"];
-                $db_end_time = $roww["end_time"];
-                $db_usyd_cat = $roww["usyd_cat"];
-                $db_usyd_change = $roww["usyd_change"];
 
-                $query2 = mysqli_query($connections, "INSERT INTO ssr_tracker(usyd_no, description, priority, applicable, sre_name, prior, action_after, ssr_owner, exec_date, start_time, end_time, usyd_cat, change_no)
-                        VALUES ('$db_ritm_no','$db_subject','$db_priority','$db_applicable','$db_sre_name','$db_prior','$db_action_after','$db_ssr_owner','$db_exec_date','$db_start_time','$db_end_time','$db_usyd_cat','$db_usyd_change')");
+                $query = mysqli_query($connections, "INSERT INTO ssr_tracker(description, usyd_no, priority, applicable, sre_name, prior, action_after, ssr_owner, exec_date, start_time, end_time, usyd_cat, dxc_cat, perform, date, status, dxc_contact) 
+            VALUES ('$description','$db_ritm','$priority','$applicable','$sre_name','$prior','$action_after','$ssr_owner','$exec_date','$start_time','$end_time','$usyd_cat','$dxc_cat','$perform', '$date', '$status', '$dxc_contact')");
             }
 
                             //IMPORTANT CHANGE THE FOLDER OF USYD_NO TO DXCSSR
@@ -165,14 +153,22 @@
                 
        $category = "Software";
        $risk = $priority;
-       $_SESSION['dxcssr'] = $dxc_ssr;
-       $_SESSION['sdescription'] = "DXCSSR" . $dxc_ssr . " - " . $usyd_no . " - " . $description;
+       $sdescription = "RITM" . $db_ritm . " - " . $description;
        $time = "2020-06-14 06:22:29";
+       $start_time = $exec_date . " " . $start_time;
+       $end_time = $exec_date . " " . $end_time;
+       $_SESSION['dxcssr'] = $dxc_ssr;
+       $_SESSION['ritm'] = $db_ritm;
+       $_SESSION['sdescription'] = $sdescription;
        $_SESSION['category'] = $category;
        $_SESSION['priority'] = $priority;
        $_SESSION['risk'] = $risk;
-       $_SESSION['start_time'] = $exec_date . " " . $start_time;
-       $_SESSION['end_time'] = $exec_date . " " . $end_time;
+       $_SESSION['start_time'] = $start_time;
+       $_SESSION['end_time'] = $end_time;
+
+       echo "<script type='text/javascript'>",
+            "usydpost('$category','$priority','$risk','$sdescription','$start_time','$end_time');",
+            "</script>";
        //header("Location: ../newrequest.html");
        header("Location: ./normal.php");
 
