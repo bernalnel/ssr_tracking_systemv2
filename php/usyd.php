@@ -7,7 +7,7 @@ $risk = $_SESSION['risk'];
 $sdescription = $_SESSION['sdescription'];
 $start_time = $_SESSION['start_time'];
 $end_time = $_SESSION['end_time'];
-//$ritm_no = $_SESSION['ritmno'];
+$ritm_no = $_SESSION['ritm'];
 
 ?>
 <script src='./usydpost.js'></script>

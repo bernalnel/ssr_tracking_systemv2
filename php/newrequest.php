@@ -166,11 +166,8 @@
        $_SESSION['start_time'] = $start_time;
        $_SESSION['end_time'] = $end_time;
 
-       echo "<script type='text/javascript'>",
-            "usydpost('$category','$priority','$risk','$sdescription','$start_time','$end_time');",
-            "</script>";
        //header("Location: ../newrequest.html");
-       header("Location: ./normal.php");
+       header("Location: ./usyd.php");
 
     }
 ?>

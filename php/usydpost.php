@@ -12,5 +12,6 @@ $ritm_no = $row['ritm_no'];
     
     echo "<script>
                 alert('New Request for Usyd has been made. $number has been created!');
+                window.location.href='./normal.php';
                 </script>"; 
 ?>
