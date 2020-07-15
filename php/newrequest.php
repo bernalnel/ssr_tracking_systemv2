@@ -5,7 +5,7 @@
 
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         if($_POST["subject"]){
-            $subject = $_POST["subject"];
+            $description = $_POST["subject"];
         }
         // if($_POST["usyd_no"]){
         //     $usyd_no = $_POST["usyd_no"];
@@ -96,7 +96,7 @@
         
         
         if($query = mysqli_query($connections, "INSERT INTO ssr_ritm(ritm_no, subject, priority, applicable, sre_name, prior, action_after, ssr_owner, exec_date, start_time, end_time, usyd_cat, usyd_change) 
-            VALUES ('','$subject','$priority','$applicable','$sre_name','$prior','$action_after','$ssr_owner','$exec_date','$start_time','$end_time','$usyd_cat','')")){
+            VALUES ('','$description','$priority','$applicable','$sre_name','$prior','$action_after','$ssr_owner','$exec_date','$start_time','$end_time','$usyd_cat','')")){
 
 
             $retrieve_query = mysqli_query($connections, "SELECT * FROM ssr_ritm ORDER BY ritm_no DESC LIMIT 1");
@@ -153,13 +153,15 @@
                 
        $category = "Software";
        $risk = $priority;
-       $sdescription = "RITM" . $db_ritm . " - " . $description;
+       $usydsdescription = "RITM" . $db_ritm . " - " . $description;
+       $dxcsdescription = $dxc_ssr . " - RITM" . $db_ritm . " - " . $description;
        $time = "2020-06-14 06:22:29";
        $start_time = $exec_date . " " . $start_time;
        $end_time = $exec_date . " " . $end_time;
        $_SESSION['dxcssr'] = $dxc_ssr;
        $_SESSION['ritm'] = $db_ritm;
-       $_SESSION['sdescription'] = $sdescription;
+       $_SESSION['usydsdescription'] = $usydsdescription;
+       $_SESSION['dxcsdescription'] = $dxcsdescription;
        $_SESSION['category'] = $category;
        $_SESSION['priority'] = $priority;
        $_SESSION['risk'] = $risk;

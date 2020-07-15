@@ -4,7 +4,7 @@ session_start();
 $category = $_SESSION['category'];
 $priority = $_SESSION['priority'];
 $risk = $_SESSION['risk'];
-$sdescription = $_SESSION['sdescription'];
+$sdescription = $_SESSION['usydsdescription'];
 $start_time = $_SESSION['start_time'];
 $end_time = $_SESSION['end_time'];
 $ritm_no = $_SESSION['ritm'];

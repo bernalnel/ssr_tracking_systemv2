@@ -4,7 +4,7 @@ session_start();
 $category = $_SESSION['category'];
 $priority = $_SESSION['priority'];
 $risk = $_SESSION['risk'];
-$sdescription = $_SESSION['sdescription'];
+$sdescription = $_SESSION['dxcsdescription'];
 $start_time = $_SESSION['start_time'];
 $end_time = $_SESSION['end_time'];
 $dxc_ssr = $_SESSION['dxcssr'];

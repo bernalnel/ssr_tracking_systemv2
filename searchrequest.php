@@ -139,7 +139,7 @@
                                         <th>$db_date</th>
                                         <th>DXCSSR$db_dxc_ssr</th>
                                         <th>$db_usyd_no</th>
-                                        <th>$db_ssr_owner</th>
+                                        <th>RITM$db_ssr_owner</th>
                                         <th>$db_sre_name</th>
                                         <th>$db_status</th>
                                         <th>$db_change_no</th>
