@@ -1,8 +1,8 @@
 <?php
 include ("./connections.php");
 
-$ritm_no = $_POST['usydno'];
-$number = $_POST['number'];
+$ritm_no = $_GET['usydno'];
+$number = $_GET['number'];
 
 $query = mysqli_query($connections, "SELECT * FROM ssr_ritm ORDER BY ritm_no DESC LIMIT 1;");
 $row = mysqli_fetch_assoc($query);

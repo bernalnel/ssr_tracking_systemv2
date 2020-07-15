@@ -20,14 +20,7 @@ function usydpost(category, priority, risk, sdescription, start, end, usydno) {
 
             var number = parsedData.result.number.display_value;
 
-            $.ajax({
-                url: './usydpost.php',
-                type: 'POST',
-                data: { 'usydno': usydno, 'number': number },
-                success: function(response) {
-                    //do whatever
-                }
-            });
+            window.location.href = "./normalpost.php?dxcssr=" + dxcssr + "&usydno=" + usydno + "&number=" + number;
         }
     };
     client.send(requestBody);
