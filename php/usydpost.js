@@ -20,7 +20,8 @@ function usydpost(category, priority, risk, sdescription, start, end, usydno) {
 
             var number = parsedData.result.number.display_value;
 
-            window.location.href = "./normalpost.php?dxcssr=" + dxcssr + "&usydno=" + usydno + "&number=" + number;
+            window.location.href = "./usydpost.php?usydno=" + usydno + "&number=" + number;
+
         }
     };
     client.send(requestBody);
