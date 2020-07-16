@@ -80,9 +80,9 @@
                                     <th>SSR Owner</th>
                                     <th>SRE Name</th>
                                     <th>Status</th>
-                                    <th>DXC Change Number</th>
-                                    <th>State</th>
+                                    <th>Change Number</th>
                                     <th>USYD Change Number</th>
+                                    <th>State</th>
                                     <th>Prior to this SSR</th>
                                     <th>Usyd Category</th>
                                     <th>DXC Category</th>
@@ -126,9 +126,9 @@
                                     $db_state = "";
                                     $db_change_no = "";
                                 }
-                                $query2 = mysqli_query($connections, "SELECT * FROM ssr_ritm WHERE ritm_no=$db_usyd_no;");
-                                if ($query2){
-                                $row2 = mysqli_fetch_assoc($query2);
+				$query2 = mysqli_query($connections, "SELECT * FROM ssr_ritm WHERE ritm_no=$db_usyd_no;");
+				 if ($query2){
+				$row2 = mysqli_fetch_assoc($query2);
                                 $usyd_change = $row2["usyd_change"];
                                 }
                                 else{
@@ -138,13 +138,13 @@
                                         <th><a href='openrequest.php?dxcssr=$db_dxc_ssr'>Open</a></th>
                                         <th>$db_date</th>
                                         <th>DXCSSR$db_dxc_ssr</th>
-                                        <th>$db_usyd_no</th>
-                                        <th>RITM$db_ssr_owner</th>
+                                        <th>RITM$db_usyd_no</th>
+                                        <th>$db_ssr_owner</th>
                                         <th>$db_sre_name</th>
                                         <th>$db_status</th>
                                         <th>$db_change_no</th>
-                                        <th>$db_state</th>
                                         <th>$usyd_change</th>
+                                        <th>$db_state</th>
                                         <th>$db_prior</th>
                                         <th>$db_usyd_cat</th>
                                         <th>$db_dxc_cat</th>

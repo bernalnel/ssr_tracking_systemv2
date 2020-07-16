@@ -26,7 +26,6 @@ CREATE TABLE ssr_database.ssr_tracker (
     action_after varchar(255),
     start_time varchar(255),
     end_time varchar(255),
-    client_email varchar(255),
     perform longtext,
     PRIMARY KEY(dxc_ssr)
     );
@@ -39,7 +38,6 @@ CREATE TABLE ssr_database.ssr_accounts (
     employee_id varchar(255),
     password varchar(255),
     type varchar(255),
-    user_email varchar(255),
     PRIMARY KEY(employee_id)
     );
 
@@ -53,7 +51,7 @@ CREATE TABLE ssr_database.ssr_files (
 
 #Create TABLE - ssr_snow 
 CREATE TABLE ssr_database.ssr_snow (
-    dxc_ssr varchar(255),
+    dxc_ssr varchar(255),           
     sys_id varchar(255),
     number varchar(30),
     state varchar(30),
@@ -83,11 +81,9 @@ PRIMARY KEY(ritm_no)
 INSERT INTO ssr_database.ssr_accounts VALUES (
     "admin",
     "admin",
-    "admin",
     "admin"
     );
 INSERT INTO ssr_database.ssr_accounts VALUES (
-    "user",
     "user",
     "user",
     "user"

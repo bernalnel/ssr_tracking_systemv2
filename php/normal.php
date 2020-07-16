@@ -24,7 +24,6 @@ $dxc_ssr = $_SESSION['dxcssr'];
 
 </html>
 
-
 <?php
 include ("./connections.php");
 
@@ -35,3 +34,5 @@ $dxc_ssr = $row['dxc_ssr'];
     $query = mysqli_query($connections, "INSERT INTO ssr_snow(sys_id, change_number, state, dxc_ssr) 
     VALUES ('','','','$dxc_ssr')");
 ?> 
+
+
