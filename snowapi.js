@@ -5,7 +5,7 @@ function snowapi() {
     var agroup = document.getElementById("agroup").value;                   //Assign to variable the input from html file
     var sdescription = document.getElementById("sdescription").value;
 
-    var requestBody = "{\"short_description\":\"" + sdescription + "\",\"assignment_group\":\"" + agroup + "\"}"
+    var requestBody = "{\"short_description\":\"" + sdescription + "\",\"assignment_group\":\"" + agroup + "\"}";
 
 
     var client=new XMLHttpRequest();
