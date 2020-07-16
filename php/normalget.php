@@ -1,6 +1,7 @@
 <?php
 include ("./connections.php");
 
+
 $sys_id = $_POST['sys_id'];
 $state = $_POST['state'];
 
@@ -13,10 +14,12 @@ $state = $_POST['state'];
     $query2 = mysqli_query($connections, "SELECT * FROM ssr_tracker WHERE dxc_ssr='$dxcssr';");
     $row2 = mysqli_fetch_assoc($query2);
     $description = $row2['description'];
+    $requestor = $row['client_email'];
 
     //email
     //$email = 'darce2@dxc.com';
-    $email = 'jlazarte2@dxc.com';
+    //$email = 'jlazarte2@dxc.com';
+    $email = $requestor;
     require 'PHPMailer/PHPMailerAutoload.php';
     $mail = new PHPMailer;
     $mail->IsSMTP();
