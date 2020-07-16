@@ -1,8 +1,6 @@
 <?php
     include ("./php/connections.php");
-    session_start();
 
-    $_SESSION['user_email'] = $user_email;
 
     if (isset($_GET["search"])){
         $check = $_GET["search"];
