@@ -80,8 +80,8 @@
                                     <th>SSR Owner</th>
                                     <th>SRE Name</th>
                                     <th>Status</th>
-                                    <th>Change Number</th>
                                     <th>USYD Change Number</th>
+                                    <th>DXC Change Number</th>
                                     <th>State</th>
                                     <th>Prior to this SSR</th>
                                     <th>Usyd Category</th>
@@ -142,8 +142,8 @@
                                         <th>$db_ssr_owner</th>
                                         <th>$db_sre_name</th>
                                         <th>$db_status</th>
-                                        <th>$db_change_no</th>
                                         <th>$usyd_change</th>
+                                        <th>$db_change_no</th>
                                         <th>$db_state</th>
                                         <th>$db_prior</th>
                                         <th>$db_usyd_cat</th>
