@@ -74,6 +74,7 @@
                                     <th>User ID</th>
                                     <th>Password</th>
                                     <th>User Type</th>
+                                    <th>User Email</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -82,12 +83,14 @@
                                         $employee_id = $row["employee_id"];
                                         $password = $row["password"];
                                         $type = $row["type"];
+                                        $user_email = $row["user_email"];
                                 
                                         echo "<tr>
                                                 <td><a href='delete.php?employee_id=$employee_id'>Delete</a></td>
                                                 <td>$employee_id</td>
                                                 <td>$password</td>
                                                 <td>$type</td>
+                                                <td>$user_email</td>
                                                 
                                             </tr>";
                                     }
@@ -96,13 +99,15 @@
                         </table>
                     </div><br>
                 </form>
-                <form method="post">
+                <form method="post" autocomplete="off">
                     <label for="user_id">User ID:</label>
                     <input type="text" id="user_id" name="user_id">
                     <label for="password">Password:</label>
                     <input type="text" id="password" name="password">
                     <label for="type">Type:</label>
-                    <input type="text" id="type" name="type"><br><br>
+                    <input type="text" id="type" name="type">
+                    <label for="user_email">User Email:</label>
+                    <input type="text" id="user_email" name="user_email"><br><br>
                     <button type="submit" id="create_user" id="create_user" formaction="./php/create_user.php">Create User</button>
                     <button type="submit" id="update" id="update" formaction="./php/update_user.php">Update</button><br>
                 </form>

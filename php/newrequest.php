@@ -3,6 +3,8 @@
     include ("./usydpost.js");
     session_start();
 
+    $requestor = $_SESSION['user_email'];
+
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         if($_POST["subject"]){
             $description = $_POST["subject"];
@@ -103,8 +105,8 @@
             while($roww = mysqli_fetch_assoc($retrieve_query)){
                 $db_ritm = $roww["ritm_no"];
 
-                $query = mysqli_query($connections, "INSERT INTO ssr_tracker(description, usyd_no, priority, applicable, sre_name, prior, action_after, ssr_owner, exec_date, start_time, end_time, usyd_cat, dxc_cat, perform, date, status, dxc_contact) 
-            VALUES ('$description','$db_ritm','$priority','$applicable','$sre_name','$prior','$action_after','$ssr_owner','$exec_date','$start_time','$end_time','$usyd_cat','$dxc_cat','$perform', '$date', '$status', '$dxc_contact')");
+                $query = mysqli_query($connections, "INSERT INTO ssr_tracker(description, usyd_no, priority, applicable, sre_name, prior, action_after, ssr_owner, exec_date, start_time, end_time, usyd_cat, dxc_cat, perform, date, status, dxc_contact, client_email) 
+            VALUES ('$description','$db_ritm','$priority','$applicable','$sre_name','$prior','$action_after','$ssr_owner','$exec_date','$start_time','$end_time','$usyd_cat','$dxc_cat','$perform', '$date', '$status', '$dxc_contact', '$requestor')");
             }
 
                             //IMPORTANT CHANGE THE FOLDER OF USYD_NO TO DXCSSR
