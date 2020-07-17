@@ -2,7 +2,7 @@
 include ("connections.php");
 
   $sql = "INSERT INTO ssr_accounts
-  VALUES ('" . $_POST["user_id"] . "', '" . $_POST["password"] . "', '" . $_POST["type"] . "');";
+  VALUES ('" . $_POST["user_id"] . "', '" . $_POST["password"] . "', '" . $_POST["type"] . "', '" . $_POST["user_email"] . "');";
   if ($connections->query($sql) === TRUE) {
       echo "<script>
     alert('New user created successfully!');
