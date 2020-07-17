@@ -27,6 +27,7 @@ CREATE TABLE ssr_database.ssr_tracker (
     start_time varchar(255),
     end_time varchar(255),
     perform longtext,
+    client_mail varchar(255),
     PRIMARY KEY(dxc_ssr)
     );
 
@@ -38,6 +39,7 @@ CREATE TABLE ssr_database.ssr_accounts (
     employee_id varchar(255),
     password varchar(255),
     type varchar(255),
+    user_mail varchar(255),
     PRIMARY KEY(employee_id)
     );
 
