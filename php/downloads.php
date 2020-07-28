@@ -1,11 +1,11 @@
 <?php
 // connect to the database
-$conn = mysqli_connect('localhost', 'root', '', 'ssr_database');
+include ("./connections.php");
 
 $id = $_GET['file_id'];
 
-$sql = "SELECT * FROM ssr_files WHERE dxc_ssr= '$id'";
-$result = mysqli_query($conn, $sql);
+$sql = "SELECT * FROM ssr_files WHERE dxc_ssr='$id'";
+$result = mysqli_query($connections, $sql);
 
 $i = 1;
 while($row = mysqli_fetch_assoc($result)){
