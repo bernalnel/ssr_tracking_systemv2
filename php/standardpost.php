@@ -5,10 +5,10 @@ session_start();
 $current_email = $_SESSION['user_email'];
 
 
-$dxcssr = $_POST['dxcssr'];
-$sys_id = $_POST['sys_id'];
-$number = $_POST['number'];
-$state = $_POST['state'];
+$dxcssr = $_GET['dxcssr'];
+$sys_id = $_GET['sys_id'];
+$number = $_GET['number'];
+$state = $_GET['state'];
 
 $query = mysqli_query($connections, "SELECT * FROM ssr_tracker WHERE dxc_ssr='$dxcssr';");
             $row = mysqli_fetch_assoc($query);

@@ -18,14 +18,7 @@ function standardpost(category, priority, risk, sdescription, start, end, dxcssr
             var res = this.response;
             parsedData = JSON.parse(res);
 
-            $.ajax({
-                url: './standardpost.php',
-                type: 'POST',
-                data: { 'dxcssr=': dxcssr, 'sys_id': parsedData.result.sys_id.value, 'number': parsedData.result.number.value, 'state': "New", 'template': template },
-                success: function(response) {
-                    //do whatever
-                }
-            });
+            window.location.href = "./standardpost.php?dxcssr=" + dxcssr + "&sys_id=" + parsedData.result.sys_id.value + "&number=" + parsedData.result.number.value + "&state=New";
 
         }
     };
