@@ -46,6 +46,9 @@
         if($_POST["description"]){
             $perform = $_POST["description"];
         }
+        if($_POST["classification"]){
+            $classification = $_POST["classification"];
+        }
 
         //date & time in a different time zone e.g. Australia/sydney
         //date_default_timezone_set('Australia/Sydney');
@@ -171,7 +174,7 @@
        $_SESSION['risk'] = $risk;
        $_SESSION['start_time'] = $start_time;
        $_SESSION['end_time'] = $end_time;
-
+       $_SESSION['classification'] = $classification;
        //header("Location: ../newrequest.html");
        header("Location: ./usyd.php");
 

@@ -18,7 +18,7 @@ $ritm_no = $_SESSION['ritm'];
 </head>
 
 <body onload="usydpost('<?php echo $category ?>',
-    '<?php echo $priority ?>', '<?php echo $category ?>', '<?php echo $sdescription ?>',
+    '<?php echo $priority ?>', '<?php echo $risk ?>', '<?php echo $sdescription ?>',
     '<?php echo $start_time ?>', '<?php echo $end_time ?>', '<?php echo $ritm_no ?>')">
 
 </body>
