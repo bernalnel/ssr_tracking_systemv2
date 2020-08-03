@@ -14,6 +14,7 @@ $state = $_POST['state'];
     $row2 = mysqli_fetch_assoc($query2);
     $description = $row2['description'];
     $reqeustor = $row2['client_email'];
+    $ritm = $row2['usyd_no'];
 
     //email
     //$email = 'darce2@dxc.com';
@@ -39,7 +40,7 @@ $state = $_POST['state'];
 
                     //Insert NEW UPDATE Email Script here
                     $m1 = "Hello  Team, <br><br>";
-                    $m2 = "This is to update the request <b>DXCSSR$dxcssr</b>.<br><br>";
+                    $m2 = "This is to update the request <b>$ritm</b> - <b>DXCSSR$dxcssr</b>.<br>";
                     $m3 = "The change no. in SNOW is " . "<b>$number</b>" . " is now in " . "<b>$state</b>" . " state. <br><br>";
                     $m4 = "Regards, <br> SSR Triage Team <br> DXC Technology";
                     $message = $m1.$m2.$m3.$m4;
