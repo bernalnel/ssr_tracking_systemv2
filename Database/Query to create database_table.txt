@@ -28,6 +28,7 @@ CREATE TABLE ssr_database.ssr_tracker (
     end_time varchar(255),
     perform longtext,
     client_mail varchar(255),
+    classification varchar(255),
     PRIMARY KEY(dxc_ssr)
     );
 
