@@ -28,6 +28,7 @@ CREATE TABLE ssr_database.ssr_tracker (
     end_time varchar(255),
     perform longtext,
     client_mail varchar(255),
+    classification varchar(255),
     PRIMARY KEY(dxc_ssr)
     );
 
@@ -83,9 +84,11 @@ PRIMARY KEY(ritm_no)
 INSERT INTO ssr_database.ssr_accounts VALUES (
     "admin",
     "admin",
+    "admin",
     "admin"
     );
 INSERT INTO ssr_database.ssr_accounts VALUES (
+    "user",
     "user",
     "user",
     "user"
