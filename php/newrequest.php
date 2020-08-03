@@ -108,7 +108,7 @@
             while($roww = mysqli_fetch_assoc($retrieve_query)){
                 $db_ritm = $roww["ritm_no"];
 
-                $query = mysqli_query($connections, "INSERT INTO ssr_tracker(description, usyd_no, priority, applicable, sre_name, prior, action_after, ssr_owner, exec_date, start_time, end_time, usyd_cat, dxc_cat, perform, date, status, dxc_contact, client_email, classification)
+                $query = mysqli_query($connections, "INSERT INTO ssr_tracker(description, usyd_no, priority, applicable, sre_name, prior, action_after, ssr_owner, exec_date, start_time, end_time, usyd_cat, dxc_cat, perform, date, status, dxc_contact, client_mail, classification)
             VALUES ('$description','$db_ritm','$priority','$applicable','$sre_name','$prior','$action_after','$ssr_owner','$exec_date','$start_time','$end_time','$usyd_cat','$dxc_cat','$perform', '$date', '$status', '$dxc_contact', '$requestor', '$classification')");
             }
 
