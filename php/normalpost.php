@@ -37,8 +37,8 @@ if($query = mysqli_query($connections, "INSERT INTO ssr_snow(dxc_ssr, sys_id, nu
 
             $mail->isHTML(true);
             $m1 = "Hi, <br><br>";
-            $m2 = "This is acknowledged. <br>";
-            $m3 = "The DXC SSR No. for this request is <b>DXCSSR$dxcssr</b><br><br>";
+            $m2 = "This is acknowledged. <br><br>";
+            $m3 = "The DXC SSR No. is <b>DXCSSR$dxcssr</b>, with USYD Reference No. <b>$ritm</b>.<br>";
             $m4 = "The change no. in SNOW is " . "<b>$number</b>" . " and in " . "<b>$state</b>" . " state.<br><br>";
             $m5 = "Regards, <br> SSR Triage Team <br> DXC Technology";
             $message = $m1.$m2.$m3.$m4.$m5;

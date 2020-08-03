@@ -39,7 +39,7 @@ CREATE TABLE ssr_database.ssr_accounts (
     employee_id varchar(255),
     password varchar(255),
     type varchar(255),
-    user_mail varchar(255),
+    user_email varchar(255),
     PRIMARY KEY(employee_id)
     );
 
@@ -83,9 +83,11 @@ PRIMARY KEY(ritm_no)
 INSERT INTO ssr_database.ssr_accounts VALUES (
     "admin",
     "admin",
+    "admin",
     "admin"
     );
 INSERT INTO ssr_database.ssr_accounts VALUES (
+    "user",
     "user",
     "user",
     "user"
